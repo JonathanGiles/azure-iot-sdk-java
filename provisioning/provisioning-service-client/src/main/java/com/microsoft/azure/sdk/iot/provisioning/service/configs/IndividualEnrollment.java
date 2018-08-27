@@ -16,23 +16,24 @@ import java.util.Date;
 
 /**
  * Representation of a single Device Provisioning Service enrollment with a JSON serializer and deserializer.
- * <p>
+ *
  * <p> This object is used to send IndividualEnrollment information to the provisioning service, or receive IndividualEnrollment
- * information from the provisioning service.
- * <p>
+ * information from the provisioning service.</p>
+ *
  * <p> To create or update an IndividualEnrollment on the provisioning service you should fill this object and call the
  * public API {@link ProvisioningServiceClient#createOrUpdateIndividualEnrollment(IndividualEnrollment)}.
  * The minimum information required by the provisioning service is the {@code registrationId} and the
- * {@code attestation}.
- * <p>
+ * {@code attestation}.</p>
+ *
  * <p> A new device can be provisioned by two attestation mechanisms, Trust Platform Module (see {@link TpmAttestation})
  * or X509 (see {@link X509Attestation}). The definition of each one you should use depending on the
- * physical authentication hardware that the device contains.
- * <p>
+ * physical authentication hardware that the device contains.</p>
+ *
  * <p> The content of this class will be serialized in a JSON format and sent as a body of the rest API to the
- * provisioning service.
- * <p>
- * <p> When serialized, an IndividualEnrollment will look like the following example:
+ * provisioning service.</p>
+ *
+ * <p> When serialized, an IndividualEnrollment will look like the following example:</p>
+ *
  * <pre>
  * {@code
  * {
@@ -49,11 +50,12 @@ import java.util.Date;
  * }
  * }
  * </pre>
- * <p>
+ *
  * <p> The content of this class can be filled by a JSON, received from the provisioning service, as result of a
- * IndividualEnrollment operation like create, update, or query enrollment.
- * <p>
- * <p> The following JSON is a sample or the IndividualEnrollment response, received from the provisioning service.
+ * IndividualEnrollment operation like create, update, or query enrollment.</p>
+ *
+ * <p> The following JSON is a sample or the IndividualEnrollment response, received from the provisioning service.</p>
+ *
  * <pre>
  * {@code
  * {
