@@ -151,14 +151,15 @@ public class IndividualEnrollment extends Serializable
 
     /**
      * CONSTRUCTOR
-     * <p>
+     *
      * <p> This constructor creates an instance of the enrollment with the minimum set of information
      * required by the provisioning service. A valid enrollment must contain the registrationId,
-     * which uniquely identify this enrollment, and the attestation mechanism, which can be TPM or X509.
-     * <p>
-     * <p> Other parameters can be added by calling the setters on this class.
-     * <p>
-     * <p> When serialized, an IndividualEnrollment will look like the following example:
+     * which uniquely identify this enrollment, and the attestation mechanism, which can be TPM or X509.</p>
+     *
+     * <p> Other parameters can be added by calling the setters on this class.</p>
+     *
+     * <p> When serialized, an IndividualEnrollment will look like the following example:</p>
+     *
      * <pre>
      * {@code
      * {
@@ -186,11 +187,12 @@ public class IndividualEnrollment extends Serializable
 
     /**
      * CONSTRUCTOR
-     * <p>
+     *
      * <p> This constructor creates an instance of the enrollment filling the class with the information
-     * provided in the JSON. It is used by the SDK to parse enrollment responses from the provisioning service.
-     * <p>
-     * <p> The following JSON is a sample of the IndividualEnrollment response, received from the provisioning service.
+     * provided in the JSON. It is used by the SDK to parse enrollment responses from the provisioning service.</p>
+     *
+     * <p> The following JSON is a sample of the IndividualEnrollment response, received from the provisioning service.</p>
+     *
      * <pre>
      * {@code
      * {
@@ -288,14 +290,12 @@ public class IndividualEnrollment extends Serializable
 
     /**
      * Serializer
-     * <p>
-     * <p>
-     * Creates a {@code JsonElement}, which the content represents
-     * the information in this class and its subclasses in a JSON format.
-     * <p>
-     * This is useful if the caller will integrate this JSON with JSON from
-     * other classes to generate a consolidated JSON.
-     * </p>
+     *
+     * <p>Creates a {@code JsonElement}, which the content represents
+     * the information in this class and its subclasses in a JSON format.</p>
+     *
+     * <p>This is useful if the caller will integrate this JSON with JSON from
+     * other classes to generate a consolidated JSON.</p>
      *
      * @return The {@code JsonElement} with the content of this class.
      */
@@ -327,13 +327,11 @@ public class IndividualEnrollment extends Serializable
 
     /**
      * Setter for the registrationId.
-     * <p>
-     * <p>
-     * A valid registration Id shall follow this criteria.
+     *
+     * <p>A valid registration Id shall follow this criteria.
      * A case-sensitive string (up to 128 char long)
      * of ASCII 7-bit alphanumeric chars
-     * + {'-', ':', '.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '$', '''}.
-     * </p>
+     * + {'-', ':', '.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '$', '''}.</p>
      *
      * @param registrationId the {@code String} with the new registrationId. It cannot be {@code null}, empty, or invalid.
      * @throws IllegalArgumentException If the provided registrationId is {@code null}, empty, or invalid.
@@ -360,7 +358,7 @@ public class IndividualEnrollment extends Serializable
 
     /**
      * Setter for the deviceId.
-     * <p>
+     *
      * <p>
      * A valid device Id shall follow this criteria.
      * A case-sensitive string (up to 128 char long)
@@ -421,15 +419,14 @@ public class IndividualEnrollment extends Serializable
 
     /**
      * Setter for the attestation.
-     * <p>
+     *
      * <p>
      * Attestation mechanism is a mandatory parameter that provides the mechanism
-     * type and the necessary keys/certificates
+     * type and the necessary keys/certificates</p>
      *
      * @param attestationMechanism the {@code AttestationMechanism} with the new attestation mechanism. It can be `tpm` or `x509`.
      * @throws IllegalArgumentException If the provided attestation mechanism is {@code null} or invalid.
      * @see AttestationMechanism
-     * </p>
      */
     protected void setAttestation(AttestationMechanism attestationMechanism)
     {
@@ -449,17 +446,16 @@ public class IndividualEnrollment extends Serializable
 
     /**
      * Setter for the attestation.
-     * <p>
+     *
      * <p>
      * Attestation mechanism is a mandatory parameter that provides the mechanism
-     * type and the necessary keys/certificates
+     * type and the necessary keys/certificates</p>
      *
      * @param attestation the {@link Attestation} with the new attestation mechanism. It can be {@link TpmAttestation} or {@link X509Attestation}.
      * @throws IllegalArgumentException If the provided attestation mechanism is {@code null}.
      * @see Attestation
      * @see TpmAttestation
      * @see X509Attestation
-     * </p>
      */
     public void setAttestation(Attestation attestation)
     {
@@ -486,7 +482,7 @@ public class IndividualEnrollment extends Serializable
 
     /**
      * Setter for the iotHubHostName.
-     * <p>
+     *
      * <p>
      * A valid iothub host name shall follow this criteria.
      * A case-sensitive string (up to 128 char long)
@@ -520,7 +516,7 @@ public class IndividualEnrollment extends Serializable
 
     /**
      * Setter for the initialTwin.
-     * <p>
+     *
      * <p>
      * It provides a Twin precondition for the provisioned device.
      * </p>
@@ -550,7 +546,7 @@ public class IndividualEnrollment extends Serializable
 
     /**
      * Setter for the provisioningStatus.
-     * <p>
+     *
      * <p>
      * It provides a Status precondition for the provisioned device.
      * </p>
@@ -580,10 +576,11 @@ public class IndividualEnrollment extends Serializable
 
     /**
      * Setter for the createdDateTimeUtc.
-     * <p>
+     *
      * <p>
      * This Date and Time is provided by the provisioning service. If the enrollment is not created yet,
-     * this string can represent an invalid Date. In this case, it will be ignored.
+     * this string can represent an invalid Date. In this case, it will be ignored.</p>
+     *
      * <p>
      * Example of the expected format:
      * {@code "2016-06-01T21:22:43.7996883Z"}
@@ -611,10 +608,11 @@ public class IndividualEnrollment extends Serializable
 
     /**
      * Setter for the lastUpdatedDateTimeUtc.
-     * <p>
+     *
      * <p>
      * This Date and Time is provided by the provisioning service. If the enrollment is not created yet,
-     * this string can represent an invalid Date. In this case, it will be ignored.
+     * this string can represent an invalid Date. In this case, it will be ignored.</p>
+     *
      * <p>
      * Example of the expected format:
      * {@code "2016-06-01T21:22:43.7996883Z"}
@@ -669,7 +667,6 @@ public class IndividualEnrollment extends Serializable
 
     /**
      * Empty constructor
-     * <p>
      * <p>
      * Used only by the tools that will deserialize this class.
      * </p>
